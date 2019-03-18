@@ -4,7 +4,7 @@ public class Vehicle
     private String mfr;
     private String color;
     private int numWheels;
-    private boolean answer;
+    public boolean answer;
 
     //enum used to set static final value for ELECTRIC_MOTOR and GAS_ENGINE
     enum PowerSource
@@ -16,7 +16,7 @@ public class Vehicle
     public PowerSource power;
     
     /**
-     * Constructor: initializes 
+     * Constructor: initializes mfr, color, power, numWheels
      */
     public Vehicle(String mfr, String color, PowerSource power, int numWheels)
     {

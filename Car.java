@@ -1,4 +1,4 @@
-public class Car extends Vehicle
+public class Car extends Vehicle implements Comparable
 {
     //private String model;
     private int maxRange;
@@ -6,13 +6,18 @@ public class Car extends Vehicle
     private boolean AWD;
     private double price;
 
+    //enum used to set static final value for SEDAN, SUV, SPORTS, MINIVAN
     enum CarModel
     {
         SEDAN,SUV,SPORTS,MINIVAN;
     }
 
+    //creating reference to enum so it can be assigned to the constructer
     public CarModel model;
 
+    /**
+     * Constructor: initializes model, maxRange, safetyRating, AWD, price, mfr, color, power, numWheels
+     */
     public Car(CarModel model, int maxRange, double safetyRating, boolean AWD, double price, String mfr, String color, PowerSource power, int numWheels)
     {
         super(mfr,color,power,numWheels);
@@ -23,5 +28,42 @@ public class Car extends Vehicle
         this.price = price;
     }
 
+    /**
+       Returns the string containing model, maxRange, safetyRating, AWD, price, manufacturer name and color seperated by a spaces
+       @return the display
+     */
+    public String display()
+    {
+        super.display();
+        return model + " " + maxRange + " " + safetyRating + " " + AWD + " " + price;
+    }
 
+    /**
+       Returns the boolean value true or false if cars are equal
+       @return answer
+     */
+    public boolean equals (Object other)
+	{
+		Car obj = (Car) other; 
+		if ((super.equals(obj)) && ((this.model.equals(obj.model))) && (this.AWD==obj.AWD))
+		{
+			return true;
+		}
+		else 
+			return false; 
+	}
+
+
+    public int compareTo(Car other)
+    {
+        if (this.price<other.price)
+        {
+            return -1;
+        }
+        if (this.price>other.price)
+        {
+            return 1;
+        }
+        return 0;
+    }
 }
