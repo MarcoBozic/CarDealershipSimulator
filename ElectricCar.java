@@ -15,11 +15,37 @@ public class ElectricCar extends Car
     }
 
     /**
-       Returns the power source
-       @return the power source
+     * Returns the recharge time
+     * @return the recharge time
      */
-    public PowerSource getPower()
+    public int getRechargeTime()
     {
-        return power;
+        return rechargeTime;
+    }
+
+    /** 
+    * Sets the new recharge time (in minutes)
+    * @param newRechargeTime recharge time (in minutes)
+    */
+    public void setRechargeTime(int newRechargeTime)
+    {
+        this.rechargeTime = newRechargeTime;
+    }
+    /**
+     * Returns the battery type
+     * @return the battery type
+     */
+    public String getBatteryType()
+    {
+        return batteryType;
+    }
+
+    /** 
+    * Sets the new battery type
+    * @param newBatteryType battery type
+    */
+    public void setBatteryType(String newBatteryType)
+    {
+        this.batteryType = newBatteryType;
     }
 }
