@@ -1,4 +1,4 @@
-public class Car extends Vehicle implements Comparable
+public class Car extends Vehicle implements Comparable<Car>
 {
     //private String model;
     private int maxRange;
