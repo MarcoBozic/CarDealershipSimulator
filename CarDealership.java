@@ -1,13 +1,20 @@
 import java.util.ArrayList;
-public class CarDealership
+import java.util.Comparator;
+import java.util.Collections;
+public class CarDealership 
 {
-    //instance variable
+    //instance variables
     private ArrayList<Car> cars;
+    private boolean electricFilter;
+    private boolean AWDFilter;
+    private boolean priceFilter;
+    private double minPrice;
+    private double maxPrice;
 
     /**
      * Constructor: initializes ArrayList
      */
-    public CarDealership(ArrayList<Car> cars)
+    public CarDealership(ArrayList<Car> cars, boolean electricFilter, boolean AWDFilter, boolean priceFilter)
     {
         this.cars = cars;
         ArrayList<Car> carList = new ArrayList<Car>();
@@ -24,7 +31,7 @@ public class CarDealership
 
     public Car buyCar(int index)
     {
-        if (index >= 0 && index < carList.size())
+        if (index >= 0 && index < cars.size())
         {
             cars.remove(index);
         }
@@ -33,56 +40,103 @@ public class CarDealership
 
     public void returnCar(Car car)
     {
-        carList.add(car);
+        cars.add(car);
     }
 
     public void displayInventory()
     {
-        for (int i = 0; i < carList.size(); i++)
+        for (int i = 0; i < cars.size(); i++)
         {
-            System.out.println(i);
-            Sytem.out.println(Car.display());
+            boolean doNotPrint = false;
+            if (electricFilter)
+            {
+                if (cars.get(i).getPower()==Vehicle.PowerSource.ELECTRIC_MOTOR)
+                {
+                    doNotPrint = true;
+                }
+            }
+            if (AWDFilter)
+            {
+                if (cars.get(i).getAWD()==false)
+                {
+                    doNotPrint = true;
+                }
+            }
+            if (priceFilter)
+            {
+                double cost = cars.get(i).getPrice();
+                if (cost<minPrice || cost>maxPrice)
+                {
+                    doNotPrint = true;
+                }
+            }
+            if (doNotPrint = false)
+            {
+                System.out.println(i+". "+cars.get(i).display());
+            }
         }
     }
 
     public void filterByElectric()
     {
-        //
+        electricFilter = true;
     }
 
     public void filterByAWD()
     {
-        //
+        AWDFilter = true;
     }
 
     public void filterByPrice(double minPrice, double maxPrice)
     {
-        //
+        priceFilter = true;
     }
 
     public void filtersClear()
     {
-        //
+        electricFilter = false;
+        AWDFilter = false;
+        priceFilter = false;
     }
 
     public void sortByPrice()
     {
+        Collections.sort(cars);
+    }
+
+    //public class RangeComparator implments Comparator<Car>
+    
+        public void sortByMaxRange()
+        {
+            Collections.sort(cars, new RangeComparator()){
+                public int compare(Car thisCar, Car otherCar)
+                {
+                    if (thisCar.getMaxRange() < otherCar.getMaxRange())
+                {
+                    return 1;
+                }
+                else if (thisCar.getMaxRange() > otherCar.getMaxRange())
+                {
+                    return -1;
+                }
+                else
+                {
+                    return 0;
+                }
+                });
+         
+    //public void sortBySafetyRating()
+    //{
         //
-    }
+    //}
 
-    public void sortBySafetyRating()
-    {
-        //
-    }
-
-    public void sortByMaxRange()
-    {
-        //
-    }
-
-
-    }
-
+   // public void sortByMaxRange()
+    //{
+    //    Collections.sort(cars, new RangeComparator());
+    //}
 
 
 }
+
+
+

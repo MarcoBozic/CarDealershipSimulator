@@ -61,15 +61,18 @@ public class Car extends Vehicle implements Comparable<Car>
     */    
     public int compareTo(Car other)
     {
-        if (this.price<other.price)
-        {
-            return -1;
-        }
         if (this.price>other.price)
         {
             return 1;
         }
-        return 0;
+        if (this.price<other.price)
+        {
+            return -1;
+        }
+        else
+        {
+            return 0;
+        }
     }
 
     /**
