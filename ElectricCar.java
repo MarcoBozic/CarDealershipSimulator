@@ -48,4 +48,14 @@ public class ElectricCar extends Car
     {
         this.batteryType = newBatteryType;
     }
+
+    /**
+       Returns the string containing rechargeTime, batteryType, model, maxRange, safetyRating, AWD, price, manufacturer name and color seperated by a spaces
+       @return the display
+     */
+    public String display()
+    {
+        super.display();
+        return rechargeTime + " " + batteryType;
+    }
 }
