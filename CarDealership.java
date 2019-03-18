@@ -104,39 +104,22 @@ public class CarDealership
         Collections.sort(cars);
     }
 
-    //public class RangeComparator implments Comparator<Car>
-    
-        public void sortByMaxRange()
+    public void sortByRange()
+    {
+        Collections.sort(cars, new Comparator<Car>()
         {
-            Collections.sort(cars, new RangeComparator()){
-                public int compare(Car thisCar, Car otherCar)
-                {
-                    if (thisCar.getMaxRange() < otherCar.getMaxRange())
+            public int compare(Car thisCar, Car otherCar)
+            {
+                if (thisCar.getMaxRange() > otherCar.getMaxRange())
                 {
                     return 1;
                 }
-                else if (thisCar.getMaxRange() > otherCar.getMaxRange())
+                if (thisCar.getMaxRange() < otherCar.getMaxRange())
                 {
                     return -1;
                 }
-                else
-                {
-                    return 0;
-                }
-                });
-         
-    //public void sortBySafetyRating()
-    //{
-        //
-    //}
-
-   // public void sortByMaxRange()
-    //{
-    //    Collections.sort(cars, new RangeComparator());
-    //}
-
-
-}
-
-
-
+                return 0;
+            }
+        });
+    }
+}       
