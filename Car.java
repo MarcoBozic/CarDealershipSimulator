@@ -53,7 +53,12 @@ public class Car extends Vehicle implements Comparable<Car>
 			return false; 
 	}
 
-
+    /**
+       Compares this car with another in the form of Comparable interface.
+       @return -1 if this price is lower than other's price
+       +1 if this price is higher than other's price
+       0 if the prices are the same
+    */    
     public int compareTo(Car other)
     {
         if (this.price<other.price)
