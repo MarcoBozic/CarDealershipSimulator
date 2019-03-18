@@ -21,6 +21,7 @@ public class CarDealership
         cars = carList;
     }
 
+    //adds cars to the ArrayList 
     public void addCars(ArrayList<Car> newCars)
     {
         for (int i = 0; i < newCars.size(); i++)
@@ -29,6 +30,7 @@ public class CarDealership
         }
     }
 
+    //takes car out of ArrayList
     public Car buyCar(int index)
     {
         if (index >= 0 && index < cars.size())
@@ -38,11 +40,13 @@ public class CarDealership
         return null;
     }
 
+    //add car back to ArrayList
     public void returnCar(Car car)
     {
         cars.add(car);
     }
 
+    //use filters to display proper vehicles
     public void displayInventory()
     {
         for (int i = 0; i < cars.size(); i++)
@@ -77,21 +81,25 @@ public class CarDealership
         }
     }
 
+    //set electricFilter to true if called
     public void filterByElectric()
     {
         electricFilter = true;
     }
 
+    //set AWDFilter to true if called
     public void filterByAWD()
     {
         AWDFilter = true;
     }
 
+    //set priceFilter to true if called use parameters in displayInventory
     public void filterByPrice(double minPrice, double maxPrice)
     {
         priceFilter = true;
     }
 
+    //set all filters to false if called
     public void filtersClear()
     {
         electricFilter = false;
@@ -99,11 +107,13 @@ public class CarDealership
         priceFilter = false;
     }
 
+    //sort ArrayList by price
     public void sortByPrice()
     {
         Collections.sort(cars);
     }
 
+    //sort by Max Range of cars using comparator
     public void sortByMaxRange()
     {
         Collections.sort(cars, new Comparator<Car>()
@@ -123,6 +133,7 @@ public class CarDealership
         });
     }
 
+    //sort by Safety Rating using comparator
     public void sortBySafetyRating()
     {
         Collections.sort(cars, new Comparator<Car>()
