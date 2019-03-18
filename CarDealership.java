@@ -2,24 +2,23 @@ import java.util.ArrayList;
 public class CarDealership
 {
     //instance variable
-    private int cars;
-    private Car specific;
+    private ArrayList<Car> cars;
 
     /**
      * Constructor: initializes ArrayList
      */
-    public CarDealership(int cars)
+    public CarDealership(ArrayList<Car> cars)
     {
         this.cars = cars;
-        ArrayList<Car> carList = new ArrayList<Car>(cars);
+        ArrayList<Car> carList = new ArrayList<Car>();
+        cars = carList;
     }
 
     public void addCars(ArrayList<Car> newCars)
     {
         for (int i = 0; i < newCars.size(); i++)
         {
-            specific = newCars.get(i);
-            carList.add(specific);
+            cars.add(newCars.get(i));
         }
     }
 
@@ -27,10 +26,9 @@ public class CarDealership
     {
         if (index >= 0 && index < carList.size())
         {
-            specific = carList.get(index);
-            carList.remove(index);
+            cars.remove(index);
         }
-        return specific;
+        return null;
     }
 
     public void returnCar(Car car)
@@ -82,7 +80,7 @@ public class CarDealership
         //
     }
 
-    
+
     }
 
 

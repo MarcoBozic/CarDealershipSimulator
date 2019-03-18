@@ -71,4 +71,40 @@ public class Car extends Vehicle implements Comparable<Car>
         }
         return 0;
     }
+
+    /**
+       Returns the maximum range
+       @return the maximun range
+     */
+    public int getMaxRange()
+    {
+        return maxRange;
+    }
+
+    /**
+       Returns the safety rating
+       @return the safety rating
+     */
+    public double getSafetyRating()
+    {
+        return safetyRating;
+    }
+
+    /**
+       Returns true if vehicle is AWD
+       @return true if car is AWD
+     */
+    public boolean getAWD()
+    {
+        return AWD;
+    }
+
+    /**
+       Returns the price value
+       @return price
+     */
+    public double getPrice()
+    {
+        return price;
+    }
 }
