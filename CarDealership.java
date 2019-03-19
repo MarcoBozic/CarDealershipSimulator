@@ -14,7 +14,7 @@ public class CarDealership
     /**
      * Constructor: initializes ArrayList
      */
-    public CarDealership(ArrayList<Car> cars, boolean electricFilter, boolean AWDFilter, boolean priceFilter)
+    public CarDealership(ArrayList<Car> cars, boolean electricFilter, boolean AWDFilter, boolean priceFilter, double minPrice, double maxPrice)
     {
         this.cars = cars;
         ArrayList<Car> carList = new ArrayList<Car>();

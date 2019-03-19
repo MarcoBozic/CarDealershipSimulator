@@ -5,13 +5,13 @@ public class CarDealershipSimulator
 {
   public static void main(String[] args)
   {
-    
+    ArrayList<Car> carList = new ArrayList<Car>();
 	  // Create a CarDealership object
     CarDealership dealership = new CarDealership(carList, false, false, false, 0, 0);
 	  // Then create an (initially empty) array list of type Car
-	  ArrayList<Car> carList = new ArrayList<Car>();
+	  //ArrayList<Car> carList = new ArrayList<Car>();
       // Then create some new car objects of different types
-	  carList.add(new Car("Toyota","blue",Car.Model.SEDAN,Vehicle.PowerSource.GAS_ENGINE,9.5,500,false,25000));
+	  carList.add(new Car("Toyota","blue","SEDAN",Vehicle.PowerSource.GAS_ENGINE,9.5,500,false,25000,4));
      //carList.add(new Car("SPORTS",450, 9.2, false, 30000, "Honda",  "red", 1, 4));
      //carList.add(new Car("MINIVAN",550, 9.7, false, 20000, "Kia",  "white", 1, 4));
      //carList.add(new Car("SEDAN",600, 9.6, true, 55000, "BMW",  "black", 1, 4));
@@ -117,9 +117,6 @@ public class CarDealershipSimulator
         {
           System.out.println("Not a proper command");
         }
-
-
-
       }
   }
 
