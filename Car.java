@@ -5,20 +5,19 @@ public class Car extends Vehicle implements Comparable<Car>
     private double safetyRating;
     private boolean AWD;
     private double price;
+    private String model;
+    private int numWheels;
 
-    //enum used to set static final value for SEDAN, SUV, SPORTS, MINIVAN
-    enum CarModel
-    {
-        SEDAN,SUV,SPORTS,MINIVAN;
-    }
+    final String SEDAN = "SEDAN";
+    final String SUV = "SUV";
+    final String SPORTS = "SPORTS";
+    final String MINIVAN = "MINIVAN";
 
-    //creating reference to enum so it can be assigned to the constructer
-    public CarModel model;
 
     /**
      * Constructor: initializes model, maxRange, safetyRating, AWD, price, mfr, color, power, numWheels
      */
-    public Car(CarModel model, int maxRange, double safetyRating, boolean AWD, double price, String mfr, String color, PowerSource power, int numWheels)
+    public Car(String mfr, String color, String model, PowerSource power,double safetyRating, int maxRange,  boolean AWD, double price, int numWheels)
     {
         super(mfr,color,power,numWheels);
         this.model = model;
@@ -26,6 +25,7 @@ public class Car extends Vehicle implements Comparable<Car>
         this.safetyRating = safetyRating;
         this.AWD = AWD;
         this.price = price;
+        this.numWheels = numWheels;
     }
 
     /**

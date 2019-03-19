@@ -7,7 +7,7 @@ public class ElectricCar extends Car
      /**
      * Constructor: initializes rechargeTime, batteryType, model, maxRange, safetyRating, AWD, price, mfr, color, power, numWheels
      */
-    public ElectricCar(int rechargeTime, String batteryType, CarModel model, int maxRange, double safetyRating, boolean AWD, double price, String mfr, String color, PowerSource power, int numWheels)
+    public ElectricCar(int rechargeTime, String batteryType, String model, int maxRange, double safetyRating, boolean AWD, double price, String mfr, String color, PowerSource power, int numWheels)
     {
         super(model, maxRange, safetyRating, AWD, price, mfr, color, power, numWheels);
         this.rechargeTime = rechargeTime;

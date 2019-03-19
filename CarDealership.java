@@ -52,21 +52,21 @@ public class CarDealership
         for (int i = 0; i < cars.size(); i++)
         {
             boolean doNotPrint = false;
-            if (electricFilter)
+            if (electricFilter == true)
             {
                 if (cars.get(i).getPower()==Vehicle.PowerSource.ELECTRIC_MOTOR)
                 {
                     doNotPrint = true;
                 }
             }
-            if (AWDFilter)
+            if (AWDFilter == true)
             {
                 if (cars.get(i).getAWD()==false)
                 {
                     doNotPrint = true;
                 }
             }
-            if (priceFilter)
+            if (priceFilter == true) 
             {
                 double cost = cars.get(i).getPrice();
                 if (cost<minPrice || cost>maxPrice)
