@@ -88,27 +88,31 @@ public class CarDealershipSimulator
         {
           dealership.sortByMaxRange();
         }
-        else if(input.equals("FPR "))
+        else if(input.equals("FPR"))
         {
           double minPrice = commandLine.nextDouble();
+          double maxPrice = commandLine.nextDouble();
+          System.out.println(minPrice);
+          System.out.println(maxPrice);
           if(commandLine.hasNextDouble() == true)
           {
             continue;
           }
+          //double maxPrice = commandLine.nextDouble();
 
-          double maxPrice = commandLine.nextDouble();
-          if(commandLine.hasNextDouble() == false)
+          if(commandLine.hasNextDouble() == true)
           {
             continue;
           }
+  
 
           if(minPrice < 0 || minPrice > maxPrice)
           {
             System.out.println("IMPROPER PRICE RANGE!");
           }
-
+          
           dealership.filterByPrice(minPrice, maxPrice);
-
+          
         }
         else if(input.equals("FEL"))
         {
