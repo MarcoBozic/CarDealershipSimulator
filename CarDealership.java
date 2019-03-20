@@ -14,20 +14,28 @@ public class CarDealership
     /**
      * Constructor: initializes ArrayList
      */
-    public CarDealership(ArrayList<Car> cars, boolean electricFilter, boolean AWDFilter, boolean priceFilter, double minPrice, double maxPrice)
+    public CarDealership()
+    // public CarDealership(ArrayList<Car> cars, boolean electricFilter, boolean AWDFilter, boolean priceFilter, double minPrice, double maxPrice)
     {
         this.cars = cars;
-        ArrayList<Car> carList = new ArrayList<Car>();
-        cars = carList;
+        //ArrayList<Car> cars = new ArrayList<Car>();
+        //cars = carList;
     }
 
     //adds cars to the ArrayList 
     public void addCars(ArrayList<Car> newCars)
     {
-        for (int i = 0; i < newCars.size(); i++)
-        {
-            cars.add(newCars.get(i));
-        }
+        
+        cars.addAll(newCars);
+        //int n = newCars.size();
+        //for (int i = 0; i < n; i++)
+        //{
+         //   Car currCar = newCars.get(i);
+           // cars.addall(newCars);
+            //cars.add(newCars.get(i));
+           // System.out.println(i + " " + newCars);
+           // System.out.println(i + " " + currCar);
+       // }
     }
 
     //takes car out of ArrayList
@@ -74,9 +82,9 @@ public class CarDealership
                     doNotPrint = true;
                 }
             }
-            if (doNotPrint = false)
+            if (doNotPrint == false)
             {
-                System.out.println(i+". "+cars.get(i).display());
+                System.out.println(i+" "+cars.get(i).display());
             }
         }
     }

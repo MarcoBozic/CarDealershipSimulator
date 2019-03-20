@@ -5,6 +5,7 @@ public class Vehicle
     private String color;
     private int numWheels;
     public boolean answer;
+    
 
     //enum used to set static final value for ELECTRIC_MOTOR and GAS_ENGINE
     enum PowerSource

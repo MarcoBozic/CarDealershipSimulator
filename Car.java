@@ -6,7 +6,6 @@ public class Car extends Vehicle implements Comparable<Car>
     private boolean AWD;
     private double price;
     private String model;
-    private int numWheels;
 
     final String SEDAN = "SEDAN";
     final String SUV = "SUV";
@@ -17,15 +16,15 @@ public class Car extends Vehicle implements Comparable<Car>
     /**
      * Constructor: initializes model, maxRange, safetyRating, AWD, price, mfr, color, power, numWheels
      */
-    public Car(String mfr, String color, String model, PowerSource power,double safetyRating, int maxRange,  boolean AWD, double price, int numWheels)
+    public Car(String mfr, String color, String model, PowerSource power,double safetyRating, int maxRange,  boolean AWD, double price)
     {
-        super(mfr,color,power,numWheels);
+        super(mfr,color,power,4);
         this.model = model;
         this.maxRange = maxRange;
         this.safetyRating = safetyRating;
         this.AWD = AWD;
         this.price = price;
-        this.numWheels = numWheels;
+        //this.numWheels = numWheels;
     }
 
     /**
@@ -34,8 +33,7 @@ public class Car extends Vehicle implements Comparable<Car>
      */
     public String display()
     {
-        super.display();
-        return model + " " + maxRange + " " + safetyRating + " " + AWD + " " + price;
+        return super.display() + " " + model + " " + price + "$ SF: " + safetyRating + " RNG: " + maxRange;
     }
 
     /**

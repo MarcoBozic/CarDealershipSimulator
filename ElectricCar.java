@@ -7,11 +7,11 @@ public class ElectricCar extends Car
      /**
      * Constructor: initializes rechargeTime, batteryType, model, maxRange, safetyRating, AWD, price, mfr, color, power, numWheels
      */
-    public ElectricCar(String model, int maxRange, double safetyRating, boolean AWD, double price, String mfr, String color, PowerSource power, int numWheels, int rechargeTime, String batteryType)
+    public ElectricCar(String mfr, String color, String model, PowerSource power,double safetyRating, int maxRange,  boolean AWD, double price, String batteryType, int rechargeTime)
     {
-        super(mfr, color, model, power, safetyRating, maxRange, AWD, price, numWheels);
-        this.rechargeTime = rechargeTime;
+        super(mfr, color, model, power, safetyRating, maxRange, AWD, price);
         this.batteryType = batteryType;
+        this.rechargeTime = rechargeTime;
     }
 
     /**
@@ -55,7 +55,6 @@ public class ElectricCar extends Car
      */
     public String display()
     {
-        super.display();
-        return rechargeTime + " " + batteryType;
+        return super.display() + " EL, BAT: " + batteryType + " RCH: " + rechargeTime;
     }
 }

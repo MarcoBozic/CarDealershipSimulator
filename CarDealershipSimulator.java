@@ -7,19 +7,21 @@ public class CarDealershipSimulator
   {
     ArrayList<Car> carList = new ArrayList<Car>();
 	  // Create a CarDealership object
+    //CarDealership dealership = new CarDealership(carList, false, false, false, 0, 0);
     CarDealership dealership = new CarDealership(carList, false, false, false, 0, 0);
 	  // Then create an (initially empty) array list of type Car
-	  //ArrayList<Car> carList = new ArrayList<Car>();
+	
       // Then create some new car objects of different types
-	  carList.add(new Car("Toyota","blue","SEDAN",Vehicle.PowerSource.GAS_ENGINE,9.5,500,false,25000,4));
-     //carList.add(new Car("SPORTS",450, 9.2, false, 30000, "Honda",  "red", 1, 4));
-     //carList.add(new Car("MINIVAN",550, 9.7, false, 20000, "Kia",  "white", 1, 4));
-     //carList.add(new Car("SEDAN",600, 9.6, true, 55000, "BMW",  "black", 1, 4));
-     //carList.add(new ElectricCar("SEDAN",425, 9.1, false, 85000, "Tesla",  "red", 0, 4, 30, "Lithium-Ion"));
-     //carList.add(new Car("MINIVAN",475, 9.25, false, 40000, "Chevy",  "red", 1, 4));
-     //carList.add(new ElectricCar("SEDAN",375, 8.9, true, 37000, "ChevyColt",  "green", 0, 4, 45, "Lithum-Ion"));
-     //carList.add(new Car("SEDAN",575, 9.8, false, 150000, "Bentley",  "black", 1, 4));
-     //carList.add(new ElectricCar("SEDAN",325, 8.8, true, 32000, "NissanLeaf",  "green", 0, 4, 55, "Lithium-Ion"));
+    carList.add(new Car("Toyota","blue","SEDAN",Vehicle.PowerSource.GAS_ENGINE,9.5,500,false,25000));
+    carList.add(new Car("Honda","red","SPORTS",Vehicle.PowerSource.GAS_ENGINE,9.2,450,false,30000));
+    carList.add(new Car("Kia","white","MINIVAN",Vehicle.PowerSource.GAS_ENGINE,9.7,550,false,20000));
+    carList.add(new Car("Honda","red","SPORTS",Vehicle.PowerSource.GAS_ENGINE,9.2,450,false,30000));
+    carList.add(new Car("BMW","black","SEDAN",Vehicle.PowerSource.GAS_ENGINE,9.6,600,false,55000));
+    carList.add(new ElectricCar("Tesla","red","SEDAN",Vehicle.PowerSource.ELECTRIC_MOTOR,9.1,425,false,85000,"Lithium",30));
+    carList.add(new Car("Chevy","red","MINIVAN",Vehicle.PowerSource.GAS_ENGINE,9.25,475,false,40000));
+    carList.add(new ElectricCar("ChevyColt","green","SEDAN",Vehicle.PowerSource.ELECTRIC_MOTOR,8.9,375,false,37000,"Lithium",45));
+    carList.add(new Car("Bentley","black","SEDAN",Vehicle.PowerSource.GAS_ENGINE,9.8,575,false,150000));
+    carList.add(new ElectricCar("NissanLeaf","green","SEDAN",Vehicle.PowerSource.ELECTRIC_MOTOR,8.8,325,false,32000,"Lithium",55));
 
 
 	  // See the cars file for car object details
