@@ -51,13 +51,10 @@ public class CarDealership
     //add car back to ArrayList
     public void returnCar(Car latestPurchase)
     {
-        System.out.println("_____________");
-        System.out.println(latestPurchase);
         if (latestPurchase != null)
         {
             cars.add(latestPurchase);
         }
-        //cars.add(car);
         else
         {
             System.out.println("A CAR HAS NOT BEEN PURCHASED!");

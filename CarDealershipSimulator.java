@@ -5,10 +5,12 @@ public class CarDealershipSimulator
 {
   public static void main(String[] args)
   {
+    //instance variable
+    Car latestPurchase = null;
+    //creates a carList object
     ArrayList<Car> carList = new ArrayList<Car>();
 	  // Create a CarDealership object
     CarDealership dealership = new CarDealership();
-	  // Then create an (initially empty) array list of type Car
 	
       // Then create some new car objects of different types
     carList.add(new Car("Toyota","blue","SEDAN",Vehicle.PowerSource.GAS_ENGINE,9.5,500,false,25000));
@@ -21,11 +23,6 @@ public class CarDealershipSimulator
     carList.add(new ElectricCar("ChevyColt","green","SEDAN",Vehicle.PowerSource.ELECTRIC_MOTOR,8.9,375,true,37000,"Lithium",45));
     carList.add(new Car("Bentley","black","SEDAN",Vehicle.PowerSource.GAS_ENGINE,9.8,575,false,150000));
     carList.add(new ElectricCar("NissanLeaf","green","SEDAN",Vehicle.PowerSource.ELECTRIC_MOTOR,8.8,325,true,32000,"Lithium",55));
-
-
-	  // See the cars file for car object details
-	  // Add the car objects to the array list
-      // The ADD command should hand this array list to CarDealership object via the addCars() method	  
 
 	  // Create a scanner object
 	  Scanner scanner = new Scanner(System.in);
@@ -40,7 +37,6 @@ public class CarDealershipSimulator
         //    read the next word from the commandLine scanner
         //	check if the word (i.e. string) is equal to one of the commands and if so, call the appropriate method via the CarDealership object
   
-        Car latestPurchase = null;
 
         if(input.equals("L"))
         {
@@ -55,14 +51,9 @@ public class CarDealershipSimulator
             if(commandLine.hasNextInt())
             {
               int i = commandLine.nextInt();
-              //latestPurchase = carList.get(i);
               Car carBought = carList.get(i);
               Car car = dealership.buyCar(carList.get(i),i);
-              //latestPurchase = carList.get(i);
               latestPurchase = carBought;
-              
-              //car.display();
-              //latestPurchase = car;
             }
             else 
             {
