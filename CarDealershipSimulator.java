@@ -56,8 +56,8 @@ public class CarDealershipSimulator
             {
               int index = commandLine.nextInt();
               Car car = dealership.buyCar(index);
-              latestPurchase = car;
               car.display();
+              latestPurchase = car;
             }
         }
         else if(input.equals("RET"))
@@ -80,10 +80,10 @@ public class CarDealershipSimulator
         {
           dealership.sortByMaxRange();
         }
-        else if(input.equals("FPR"))
+        else if(input.equals("FPR "))
         {
           double minPrice = commandLine.nextDouble();
-          if(commandLine.hasNextDouble() == false)
+          if(commandLine.hasNextDouble() == true)
           {
             continue;
           }
@@ -96,7 +96,7 @@ public class CarDealershipSimulator
 
           if(minPrice < 0 || minPrice > maxPrice)
           {
-            System.out.println("IMPROPER PRICE RANGE");
+            System.out.println("IMPROPER PRICE RANGE!");
           }
 
           dealership.filterByPrice(minPrice, maxPrice);
@@ -116,7 +116,7 @@ public class CarDealershipSimulator
         }
         else
         {
-          System.out.println("INVALID COMMAND");
+          System.out.println("INVALID COMMAND!");
         }
       }
   }

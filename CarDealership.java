@@ -39,7 +39,7 @@ public class CarDealership
         {
             cars.remove(index);
         }
-        return null;
+            return null;
     }
 
     //add car back to ArrayList
@@ -70,8 +70,8 @@ public class CarDealership
             }
             if (priceFilter == true) 
             {
-                double cost = cars.get(i).getPrice();
-                if (cost<minPrice || cost>maxPrice)
+                //double cost = cars.get(i).getPrice();
+                if (cars.get(i).getPrice()<minPrice || cars.get(i).getPrice()>maxPrice)
                 {
                     doNotPrint = true;
                 }
