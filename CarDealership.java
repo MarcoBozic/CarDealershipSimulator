@@ -15,11 +15,12 @@ public class CarDealership
      * Constructor: initializes ArrayList
      */
     public CarDealership()
-    // public CarDealership(ArrayList<Car> cars, boolean electricFilter, boolean AWDFilter, boolean priceFilter, double minPrice, double maxPrice)
     {
-        this.cars = cars;
-        //ArrayList<Car> cars = new ArrayList<Car>();
-        //cars = carList;
+        ArrayList<Car> emptyList = new ArrayList<Car>();
+        this.cars = emptyList;
+        electricFilter = false;
+        AWDFilter = false;
+        priceFilter = false;
     }
 
     //adds cars to the ArrayList 

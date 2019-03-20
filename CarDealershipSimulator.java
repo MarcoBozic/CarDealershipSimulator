@@ -8,7 +8,7 @@ public class CarDealershipSimulator
     ArrayList<Car> carList = new ArrayList<Car>();
 	  // Create a CarDealership object
     //CarDealership dealership = new CarDealership(carList, false, false, false, 0, 0);
-    CarDealership dealership = new CarDealership(carList, false, false, false, 0, 0);
+    CarDealership dealership = new CarDealership();
 	  // Then create an (initially empty) array list of type Car
 	
       // Then create some new car objects of different types
