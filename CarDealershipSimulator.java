@@ -39,7 +39,7 @@ public class CarDealershipSimulator
         //    create another scanner object (call it "commandLine" or something) using the input line instead of System.in
         //    read the next word from the commandLine scanner
         //	check if the word (i.e. string) is equal to one of the commands and if so, call the appropriate method via the CarDealership object
-
+  
         Car latestPurchase = null;
 
         if(input.equals("L"))
@@ -54,15 +54,32 @@ public class CarDealershipSimulator
         {
             if(commandLine.hasNextInt())
             {
-              int index = commandLine.nextInt();
-              Car car = dealership.buyCar(index);
-              car.display();
-              latestPurchase = car;
+              int i = commandLine.nextInt();
+              //latestPurchase = carList.get(i);
+              Car carBought = carList.get(i);
+              Car car = dealership.buyCar(carList.get(i),i);
+              //latestPurchase = carList.get(i);
+              latestPurchase = carBought;
+              
+              //car.display();
+              //latestPurchase = car;
+            }
+            else 
+            {
+              System.out.println("ENTER AN INDEX VALUE!");
             }
         }
         else if(input.equals("RET"))
         {
+          if (latestPurchase != null)
+          {
             dealership.returnCar(latestPurchase);
+          }  
+          else
+          {
+            System.out.println("A CAR HAS NOT BEEN PURCHASED");
+          }
+          
         }
         else if(input.equals("ADD"))
         {

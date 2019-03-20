@@ -10,6 +10,7 @@ public class CarDealership
     private boolean priceFilter;
     private double minPrice;
     private double maxPrice;
+    //public Car latestPurchase;
 
     /**
      * Constructor: initializes ArrayList
@@ -21,8 +22,9 @@ public class CarDealership
         electricFilter = false;
         AWDFilter = false;
         priceFilter = false;
-        //minPrice = 20000.0;
-        //maxPrice = 150000.0;
+        this.minPrice = minPrice;
+        this.maxPrice = maxPrice;
+        //this.latestPurchase = latestPurchase;
     }
 
     //adds cars to the ArrayList 
@@ -33,19 +35,33 @@ public class CarDealership
     }
 
     //takes car out of ArrayList
-    public Car buyCar(int index)
+    public Car buyCar(Car car, int i)
     {
-        if (index >= 0 && index < cars.size())
+        if (i >= 0 && i < cars.size())
         {
-            cars.remove(index);
+            return cars.remove(i);
         }
-            return null;
+        else
+        {
+            car = null;
+        }    
+        return car;
     }
 
     //add car back to ArrayList
-    public void returnCar(Car car)
+    public void returnCar(Car latestPurchase)
     {
-        cars.add(car);
+        System.out.println("_____________");
+        System.out.println(latestPurchase);
+        if (latestPurchase != null)
+        {
+            cars.add(latestPurchase);
+        }
+        //cars.add(car);
+        else
+        {
+            System.out.println("A CAR HAS NOT BEEN PURCHASED!");
+        }
     }
 
     //use filters to display proper vehicles
