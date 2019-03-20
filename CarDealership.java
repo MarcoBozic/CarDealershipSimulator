@@ -21,6 +21,8 @@ public class CarDealership
         electricFilter = false;
         AWDFilter = false;
         priceFilter = false;
+        //minPrice = 20000.0;
+        //maxPrice = 150000.0;
     }
 
     //adds cars to the ArrayList 
@@ -28,15 +30,6 @@ public class CarDealership
     {
         
         cars.addAll(newCars);
-        //int n = newCars.size();
-        //for (int i = 0; i < n; i++)
-        //{
-         //   Car currCar = newCars.get(i);
-           // cars.addall(newCars);
-            //cars.add(newCars.get(i));
-           // System.out.println(i + " " + newCars);
-           // System.out.println(i + " " + currCar);
-       // }
     }
 
     //takes car out of ArrayList
@@ -63,7 +56,7 @@ public class CarDealership
             boolean doNotPrint = false;
             if (electricFilter == true)
             {
-                if (cars.get(i).getPower()==Vehicle.PowerSource.ELECTRIC_MOTOR)
+                if (cars.get(i).getPower()==Vehicle.PowerSource.GAS_ENGINE)
                 {
                     doNotPrint = true;
                 }

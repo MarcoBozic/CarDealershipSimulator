@@ -7,7 +7,6 @@ public class CarDealershipSimulator
   {
     ArrayList<Car> carList = new ArrayList<Car>();
 	  // Create a CarDealership object
-    //CarDealership dealership = new CarDealership(carList, false, false, false, 0, 0);
     CarDealership dealership = new CarDealership();
 	  // Then create an (initially empty) array list of type Car
 	
@@ -16,12 +15,12 @@ public class CarDealershipSimulator
     carList.add(new Car("Honda","red","SPORTS",Vehicle.PowerSource.GAS_ENGINE,9.2,450,false,30000));
     carList.add(new Car("Kia","white","MINIVAN",Vehicle.PowerSource.GAS_ENGINE,9.7,550,false,20000));
     carList.add(new Car("Honda","red","SPORTS",Vehicle.PowerSource.GAS_ENGINE,9.2,450,false,30000));
-    carList.add(new Car("BMW","black","SEDAN",Vehicle.PowerSource.GAS_ENGINE,9.6,600,false,55000));
-    carList.add(new ElectricCar("Tesla","red","SEDAN",Vehicle.PowerSource.ELECTRIC_MOTOR,9.1,425,false,85000,"Lithium",30));
+    carList.add(new Car("BMW","black","SEDAN",Vehicle.PowerSource.GAS_ENGINE,9.6,600,true,55000));
+    carList.add(new ElectricCar("Tesla","red","SEDAN",Vehicle.PowerSource.ELECTRIC_MOTOR,9.1,425,true,85000,"Lithium",30));
     carList.add(new Car("Chevy","red","MINIVAN",Vehicle.PowerSource.GAS_ENGINE,9.25,475,false,40000));
-    carList.add(new ElectricCar("ChevyColt","green","SEDAN",Vehicle.PowerSource.ELECTRIC_MOTOR,8.9,375,false,37000,"Lithium",45));
+    carList.add(new ElectricCar("ChevyColt","green","SEDAN",Vehicle.PowerSource.ELECTRIC_MOTOR,8.9,375,true,37000,"Lithium",45));
     carList.add(new Car("Bentley","black","SEDAN",Vehicle.PowerSource.GAS_ENGINE,9.8,575,false,150000));
-    carList.add(new ElectricCar("NissanLeaf","green","SEDAN",Vehicle.PowerSource.ELECTRIC_MOTOR,8.8,325,false,32000,"Lithium",55));
+    carList.add(new ElectricCar("NissanLeaf","green","SEDAN",Vehicle.PowerSource.ELECTRIC_MOTOR,8.8,325,true,32000,"Lithium",55));
 
 
 	  // See the cars file for car object details
@@ -83,24 +82,24 @@ public class CarDealershipSimulator
         }
         else if(input.equals("FPR"))
         {
-          double minValue = commandLine.nextDouble();
+          double minPrice = commandLine.nextDouble();
           if(commandLine.hasNextDouble() == false)
           {
             continue;
           }
 
-          double maxValue = commandLine.nextDouble();
+          double maxPrice = commandLine.nextDouble();
           if(commandLine.hasNextDouble() == false)
           {
             continue;
           }
 
-          if(minValue < 0 || minValue > maxValue)
+          if(minPrice < 0 || minPrice > maxPrice)
           {
-            System.out.println("Improper price range.");
+            System.out.println("IMPROPER PRICE RANGE");
           }
 
-          dealership.filterByPrice(minValue, maxValue);
+          dealership.filterByPrice(minPrice, maxPrice);
 
         }
         else if(input.equals("FEL"))
@@ -117,7 +116,7 @@ public class CarDealershipSimulator
         }
         else
         {
-          System.out.println("Not a proper command");
+          System.out.println("INVALID COMMAND");
         }
       }
   }
