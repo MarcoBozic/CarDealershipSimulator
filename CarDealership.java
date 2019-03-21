@@ -41,6 +41,8 @@ public class CarDealership
         else
         {
             car = null;
+            System.out.println("CAR NOT FOUND!");
+            System.out.println("MAKE SURE CARS ARE ADDED TO CAR LIST!");
         }    
         return car;
     }

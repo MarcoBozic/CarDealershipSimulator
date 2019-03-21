@@ -22,7 +22,11 @@ public class CarDealershipSimulator
     carList.add(new ElectricCar("ChevyColt","green","SEDAN",Vehicle.PowerSource.ELECTRIC_MOTOR,8.9,375,true,37000,"Lithium",45));
     carList.add(new Car("Bentley","black","SEDAN",Vehicle.PowerSource.GAS_ENGINE,9.8,575,false,150000));
     carList.add(new ElectricCar("NissanLeaf","green","SEDAN",Vehicle.PowerSource.ELECTRIC_MOTOR,8.8,325,true,32000,"Lithium",55));
-
+    //create variable used to loop if exception found
+    int x = 1;
+    
+    do{
+    try{
 	  //scanner object used for reading input
 	  Scanner scanner = new Scanner(System.in);
 	  //while the scanner has another line
@@ -53,7 +57,7 @@ public class CarDealershipSimulator
             {
               int i = commandLine.nextInt();
               //checks to see if index is greater than carList to prevent program from crashing
-              if (i > carList.size())
+              if (i > carList.size()-1)
               {
                 System.out.println("INDEX CANNOT BE GREATER THAN CAR LIST!");
               }
@@ -62,6 +66,12 @@ public class CarDealershipSimulator
               {
                 System.out.println("INDEX CANNOT BE LESS THAN ZERO!");
               }
+              
+              //if (carList.size()==0)
+              //{
+                //System.out.println(carList.size());
+                //System.out.println("CANNOT BUY CAR IF CAR LIST IS EMPTY!");
+              //}
               //takes car out of carList and saves car object in latestPurchase
               if (i < carList.size() && i >= 0)
               {
@@ -77,7 +87,7 @@ public class CarDealershipSimulator
             //forces user to enter an index value
             else 
             {
-              System.out.println("ENTER AN INDEX VALUE!");
+              System.out.println("CAR NOT FOUND!");
             }
         }
         //returns previous purchase into carList
@@ -170,5 +180,13 @@ public class CarDealershipSimulator
         }
       }
   }
-
+  //catches exception and tells user to try again
+  catch(Exception e)
+  {
+    System.out.println("PLEASE TRY AGAIN!");
+  }
+  }
+  //program keeps looping even if exception is found
+  while (x == 1);
+}
 }
