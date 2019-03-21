@@ -10,7 +10,6 @@ public class CarDealership
     private boolean priceFilter;
     private double minPrice;
     private double maxPrice;
-    //public Car latestPurchase;
 
     /**
      * Constructor: initializes ArrayList
@@ -24,13 +23,11 @@ public class CarDealership
         priceFilter = false;
         this.minPrice = minPrice;
         this.maxPrice = maxPrice;
-        //this.latestPurchase = latestPurchase;
     }
 
     //adds cars to the ArrayList 
     public void addCars(ArrayList<Car> newCars)
     {
-        
         cars.addAll(newCars);
     }
 
@@ -67,6 +64,7 @@ public class CarDealership
         for (int i = 0; i < cars.size(); i++)
         {
             boolean doNotPrint = false;
+            //if the electricFilter is set than all other car objects are set to not print 
             if (electricFilter == true)
             {
                 if (cars.get(i).getPower()==Vehicle.PowerSource.GAS_ENGINE)
@@ -74,6 +72,7 @@ public class CarDealership
                     doNotPrint = true;
                 }
             }
+            //if the AWDFilter is set than all other car objects are set to not print 
             if (AWDFilter == true)
             {
                 if (cars.get(i).getAWD()==false)
@@ -81,6 +80,7 @@ public class CarDealership
                     doNotPrint = true;
                 }
             }
+            //if the priceFilter is set than all other car objects are set to not print 
             if (priceFilter == true) 
             {
                 double cost = cars.get(i).getPrice();
@@ -89,6 +89,7 @@ public class CarDealership
                     doNotPrint = true;
                 }
             }
+            //displays cars that are set to print
             if (doNotPrint == false)
             {
                 System.out.println(i+" "+cars.get(i).display());
@@ -137,11 +138,11 @@ public class CarDealership
         {
             public int compare(Car thisCar, Car otherCar)
             {
-                if (thisCar.getMaxRange() > otherCar.getMaxRange())
+                if (thisCar.getMaxRange() < otherCar.getMaxRange())
                 {
                     return 1;
                 }
-                if (thisCar.getMaxRange() < otherCar.getMaxRange())
+                if (thisCar.getMaxRange() > otherCar.getMaxRange())
                 {
                     return -1;
                 }
@@ -157,11 +158,11 @@ public class CarDealership
         {
             public int compare(Car thisCar, Car otherCar)
             {
-                if (thisCar.getSafetyRating() > otherCar.getSafetyRating())
+                if (thisCar.getSafetyRating() < otherCar.getSafetyRating())
                 {
                     return 1;
                 }
-                if (thisCar.getSafetyRating() < otherCar.getSafetyRating())
+                if (thisCar.getSafetyRating() > otherCar.getSafetyRating())
                 {
                     return -1;
                 }

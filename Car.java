@@ -6,7 +6,7 @@ public class Car extends Vehicle implements Comparable<Car>
     private boolean AWD;
     private double price;
     private String model;
-
+    //values for car models
     final String SEDAN = "SEDAN";
     final String SUV = "SUV";
     final String SPORTS = "SPORTS";
@@ -24,7 +24,6 @@ public class Car extends Vehicle implements Comparable<Car>
         this.safetyRating = safetyRating;
         this.AWD = AWD;
         this.price = price;
-        //this.numWheels = numWheels;
     }
 
     /**
