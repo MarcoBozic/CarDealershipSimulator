@@ -83,9 +83,8 @@ public class CarDealership
             }
             if (priceFilter == true) 
             {
-                System.out.println(minPrice);
                 double cost = cars.get(i).getPrice();
-                if (cost<minPrice || cost>maxPrice)
+                if ((cost<minPrice) || (cost>maxPrice))
                 {
                     doNotPrint = true;
                 }
@@ -112,9 +111,9 @@ public class CarDealership
     //set priceFilter to true if called use parameters in displayInventory
     public void filterByPrice(double minPrice, double maxPrice)
     {
-        System.out.println(priceFilter);
+        this.minPrice = minPrice;
+        this.maxPrice = maxPrice;
         priceFilter = true;
-        System.out.println(priceFilter);
     }
 
     //set all filters to false if called
